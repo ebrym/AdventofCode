@@ -7,7 +7,8 @@ import (
 
 func main() {
 
-	//fmt.Println(logic.IncreaseSonarSweep())
+	fmt.Println(logic.IncreaseSonarSweep())
+	fmt.Println(logic.IncreaseSonarSweep2())
 
-	fmt.Println(logic.Day2())
+	//fmt.Println(logic.Day2())
 }

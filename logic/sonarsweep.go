@@ -1,9 +1,9 @@
 package logic
 
 import (
-	"log"
-
 	"adventofcode/general"
+	"log"
+	"strconv"
 )
 
 // --- Day 1: Sonar Sweep ---
@@ -67,6 +67,39 @@ func IncreaseSonarSweep() int {
 			continue
 		}
 		if input[i] > input[i-1] {
+			count++
+		}
+	}
+	return count
+}
+
+// How many measurements are larger than the previous measurement?
+func IncreaseSonarSweep2() int {
+
+	input, err := general.ReadLines("assets/sonarSweepInput.txt")
+	if err != nil {
+		log.Fatalf("readLines: %s", err)
+	}
+
+	var window []int
+
+	for i := 2; i < len(input); i++ {
+		var a, b, c int = 0, 0, 0
+		a, _ = strconv.Atoi(input[i])
+		b, _ = strconv.Atoi(input[i-1])
+		c, _ = strconv.Atoi(input[i-2])
+		window = append(window, a+b+c)
+		//window[i] = a + b + c
+	}
+
+	var count = 0
+	var next = 0
+	for i := 0; i < len(window); i++ {
+		if i == 0 {
+			continue
+		}
+		next = window[(i+1)%len(window)]
+		if window[i] < next {
 			count++
 		}
 	}

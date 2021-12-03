@@ -31,6 +31,7 @@ package logic
 // Calculate the horizontal position and depth you would have after following the planned course. What do you get if you multiply your final horizontal position by your final depth?
 import (
 	"adventofcode/general"
+	"fmt"
 	"log"
 	"strconv"
 	"strings"
@@ -49,30 +50,44 @@ func Day2() int {
 	var result int = 0
 	// set depth and horizontal position to 0
 	var depth, horizontal int = 0, 0
+	//var aim int = 0
 
 	for i := 0; i < len(input); i++ {
-		var cDepth, cHorizontal int = 0, 0
+		var val int = 0
 		if i == 0 {
 			continue
 		}
 		res1 := strings.Split(input[i], " ")
 
-		cDepth, err = strconv.Atoi(res1[1])
-		cHorizontal, err = strconv.Atoi(res1[1])
+		val, err = strconv.Atoi(res1[1])
+		//cHorizontal, err = strconv.Atoi(res1[1])
+		fmt.Println(val)
+		// if res1[0] == "forward" {
+		// 	horizontal += val
+		// 	depth += (aim * val)
+		// }
+		// if res1[0] == "down" {
+		// 	//depth += val
+		// 	aim += val
+		// }
+		// if res1[0] == "up" {
+		// 	//depth -= val
+		// 	aim -= val
+		// }
 
-		switch res1[0] {
-		case "forward":
-			horizontal = horizontal + cHorizontal
-		case "down":
-			depth = depth + cDepth
-		case "up":
-			depth = depth - cDepth
+		switch {
+		case res1[0] == "down":
+			depth += val
+		case res1[0] == "up":
+			depth -= val
+		case res1[0] == "forward":
+			horizontal += val
 		}
 		// fmt.Println(horizontal)
 		// fmt.Println(depth)
 	}
-	// fmt.Println(horizontal)
-	// fmt.Println(depth)
+	fmt.Println(horizontal)
+	fmt.Println(depth)
 	result = horizontal * depth
 	return result
 }
