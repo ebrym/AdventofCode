@@ -37,7 +37,7 @@ import (
 	"strings"
 )
 
-func Day2() int {
+func Task1() int {
 
 	log.Println("Day 2")
 
@@ -54,13 +54,10 @@ func Day2() int {
 
 	for i := 0; i < len(input); i++ {
 		var val int = 0
-		if i == 0 {
-			continue
-		}
+
 		res1 := strings.Split(input[i], " ")
 
 		val, err = strconv.Atoi(res1[1])
-		//cHorizontal, err = strconv.Atoi(res1[1])
 		fmt.Println(val)
 		// if res1[0] == "forward" {
 		// 	horizontal += val
@@ -82,6 +79,54 @@ func Day2() int {
 			depth -= val
 		case res1[0] == "forward":
 			horizontal += val
+		}
+	}
+	result = horizontal * depth
+	return result
+}
+func Task2() int {
+
+	log.Println("Day 2")
+
+	input, err := general.ReadLines("assets/day2.txt")
+	if err != nil {
+		log.Fatalf("readLines: %s", err)
+	}
+
+	// result
+	var result int = 0
+	// set depth and horizontal position to 0
+	var depth, horizontal int = 0, 0
+	var aim int = 0
+
+	for i := 0; i < len(input); i++ {
+		var val int = 0
+
+		res1 := strings.Split(input[i], " ")
+
+		val, err = strconv.Atoi(res1[1])
+
+		// if res1[0] == "forward" {
+		// 	horizontal += val
+		// 	depth += (aim * val)
+		// }
+		// if res1[0] == "down" {
+		// 	//depth += val
+		// 	aim += val
+		// }
+		// if res1[0] == "up" {
+		// 	//depth -= val
+		// 	aim -= val
+		// }
+
+		switch {
+		case res1[0] == "down":
+			aim += val
+		case res1[0] == "up":
+			aim -= val
+		case res1[0] == "forward":
+			horizontal += val
+			depth += aim * val
 		}
 		// fmt.Println(horizontal)
 		// fmt.Println(depth)
