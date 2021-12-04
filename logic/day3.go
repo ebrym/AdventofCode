@@ -79,39 +79,35 @@ func Day3Task1() int64 {
 	result = g * e
 	return result
 }
-func Day3Task2() int64 {
 
-}
-func findCommon(list []string, index int, invert bool = false, ox bool = true) string {
+// func findCommon(list []string, index int, invert bool = false, ox bool = true) string {
 
-	var result int = 0
-	var items []int = []int{0,0}
-	for i := 0; i < len(list); i++ {
-		var a string = strconv.Itoa(input[i])
-		chars[i] = a
-	}
+// 	var result int = 0
+// 	var items []int = []int{0,0}
+// 	for i := 0; i < len(list); i++ {
+// 		var a string = strconv.Itoa(input[i])
+// 		chars[i] = a
+// 	}
 
-
-	
-	var chars []string = []string{"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"}
-	for i := 0; i < len(input); i++ {
-		var a string = strconv.Itoa(input[i])
-		chars[i] = a
-	}
-	var s string = strings.Join(chars, "")
-	var chars2 []string = strings.Split(s, "")
-	var map1 map[string]int = make(map[string]int)
-	var map2 map[string]int = make(map[string]int)
-	for i := 0; i < len(chars2); i++ {
-		map1[chars2[i]]++
-	}
-	for i := 0; i < len(chars2); i++ {
-		map2[chars2[i]]++
-	}
-	for k, v := range map1 {
-		if map2[k] > v {
-			result = v
-		}
-	}
-	return result
-}
+// 	var chars []string = []string{"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"}
+// 	for i := 0; i < len(input); i++ {
+// 		var a string = strconv.Itoa(input[i])
+// 		chars[i] = a
+// 	}
+// 	var s string = strings.Join(chars, "")
+// 	var chars2 []string = strings.Split(s, "")
+// 	var map1 map[string]int = make(map[string]int)
+// 	var map2 map[string]int = make(map[string]int)
+// 	for i := 0; i < len(chars2); i++ {
+// 		map1[chars2[i]]++
+// 	}
+// 	for i := 0; i < len(chars2); i++ {
+// 		map2[chars2[i]]++
+// 	}
+// 	for k, v := range map1 {
+// 		if map2[k] > v {
+// 			result = v
+// 		}
+// 	}
+// 	return result
+// }
