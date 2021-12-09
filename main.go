@@ -28,7 +28,10 @@ func main() {
 	// fmt.Println("Task 1:", logic.Day7Task1())
 	// fmt.Println("Task 2:", logic.Day7Task2())
 
-	fmt.Println("Task 1:", logic.Day8Task1())
-	fmt.Println("Task 2:", logic.Day8Task2())
+	// fmt.Println("Task 1:", logic.Day8Task1())
+	// fmt.Println("Task 2:", logic.Day8Task2())
+
+	fmt.Println("Task 1:", logic.Day9Task1())
+	//fmt.Println("Task 2:", logic.Day9Task2())
 
 }
