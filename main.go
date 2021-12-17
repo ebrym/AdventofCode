@@ -49,8 +49,8 @@ func main() {
 	//fmt.Println("Day 15 Task :", logic.Day15Task1())
 	// fmt.Println("Day 15 Task :", logic.Day15Task1())
 
-	fmt.Println("Day 16 Task :", logic.Day16Task1())
-	// fmt.Println("Day 17 Task :", logic.Day17Task1())
+	//fmt.Println("Day 16 Task :", logic.Day16Task1())
+	fmt.Println("Day 17 Task :", logic.Day17Task1())
 	// fmt.Println("Day 18 Task :", logic.Day18Task1())
 	// fmt.Println("Day 19 Task :", logic.Day19Task1())
 	// fmt.Println("Day 20 Task :", logic.Day20Task1())
